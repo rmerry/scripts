@@ -1,0 +1,13 @@
+[Unit]
+Description=Gopls Watchdog
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+ExecStart=/opt/gopls-watchdog.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
